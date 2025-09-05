@@ -1,0 +1,323 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Encabezado Principal */
+.main-header {
+    background-color: #fff; /* Fondo blanco para la barra superior */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Barra de navegación superior */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee; /* Separador entre barras */
+    color: #555; /* Color de texto general */
+    font-size: 14px;
+}
+
+.left-section, .right-section {
+    display: flex;
+    align-items: center;
+}
+
+.university-logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+    margin-right: 20px; /* Espacio entre logo y título del curso */
+}
+
+.university-logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    border-radius: 50%; /* Si el logo es circular */
+}
+
+.course-title {
+    font-weight: bold;
+    color: #333;
+    margin-right: 20px; /* Espacio antes de los iconos */
+}
+
+.icon-link {
+    color: #555;
+    font-size: 1.2em;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.user-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+/* Barra de navegación de módulos (inferior) */
+.module-nav {
+    background-color: #1a4d7c; /* Azul oscuro */
+    padding: 10px 20px;
+}
+
+.module-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Alinear a la izquierda */
+}
+
+.module-nav li {
+    margin-right: 30px; /* Espacio entre los elementos del menú */
+}
+
+.module-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex; /* Para alinear el texto y el icono de flecha */
+    align-items: center;
+}
+
+.module-nav a i {
+    margin-left: 5px; /* Espacio entre el texto y la flecha */
+    font-size: 0.8em;
+}
+
+/* Contenido principal */
+.main-content {
+    padding: 20px 50px;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 5px;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.search-container button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-left: none;
+    cursor: pointer;
+}
+
+.search-container .search-options {
+    margin-left: 20px;
+    color: #1a4d7c;
+    text-decoration: none;
+}
+
+/* Grid de estudiantes */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px;
+}
+
+/* Estilo de la tarjeta de estudiante */
+.student-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-img .fa-user-circle { /* Apunta específicamente al ícono dentro de profile-img */
+    font-size: 9em;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.student-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+.student-card p {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a4d7c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #163a5f;
+}
+
+.social-links {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.social-links a {
+    color: #1a4d7c;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #163a5f;
+}
+
+/* Media query para tablets y pantallas medianas (menos de 768px) */
+@media (max-width: 768px) {
+    /* Ajustes para el encabezado */
+    .top-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 5px;
+    }
+
+    .left-section, .right-section {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .university-logo, .course-title, .user-profile {
+        margin-bottom: 10px;
+    }
+
+    .user-profile {
+        margin: 10px 0;
+    }
+
+    .module-nav ul {
+        flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente línea */
+    }
+
+    .module-nav li {
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+    
+    /* Centrar el contenido principal */
+    .main-content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .search-container input {
+        width: 90%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+
+    .search-container button {
+        width: 90%;
+        border-radius: 5px;
+    }
+
+    /* Ajustar el grid a 2 columnas */
+    .students-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query para móviles (menos de 480px) */
+@media (max-width: 480px) {
+    /* Ocultar el menú de navegación completo y otros elementos */
+    .module-nav {
+        display: none;
+    }
+
+    .top-navbar {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .left-section, .right-section {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .course-title, .user-profile span {
+        display: none; /* Oculta el título del curso y el nombre del usuario */
+    }
+    
+    .right-section {
+        justify-content: flex-end;
+    }
+
+    .user-profile img {
+        margin-right: 0;
+    }
+
+    .icon-link {
+        font-size: 1.5em; /* Iconos más grandes para el toque táctil */
+    }
+
+    /* Ajustar el grid a una sola columna para móviles */
+    .students-grid {
+        grid-template-columns: 1fr;
+    }
+}
