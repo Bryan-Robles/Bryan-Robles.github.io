@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #4a148c; /* Morado oscuro */
+    --secondary-color: #ab47bc; /* Morado claro */
+    --background-color: #f3e5f5; /* Lavanda muy claro */
+    --text-color: #333;
+    --white-color: #fff;
+    --success-color: #4caf50; /* Verde */
+    --error-color: #f44336;   /* Rojo */
+    --warning-color: #ff9800; /* Naranja */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.game-container {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease;
+}
+
+.game-container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.input-area {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#guessInput {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+#guessInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* --- ACTUALIZACIÓN --- */
+/* Regla mejorada para ocultar las flechas del input de tipo número en todos los navegadores */
+#guessInput[type=number] {
+  -moz-appearance: textfield; /* Específico para Firefox */
+  appearance: textfield;
+}
+#guessInput::-webkit-outer-spin-button,
+#guessInput::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Específico para Chrome, Safari, Edge */
+  margin: 0;
+}
+/* --- FIN DE ACTUALIZACIÓN --- */
+
+
+button {
+  /* --- ACTUALIZACIÓN --- */
+  /* Se añade 'appearance: none' para eliminar estilos nativos del SO,
+     asegurando consistencia visual en todos los navegadores. */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* --- FIN DE ACTUALIZACIÓN --- */
+
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.feedback {
+    margin-bottom: 1.5rem;
+}
+
+#message {
+    font-size: 1.2rem;
+    font-weight: 600;
+    min-height: 30px;
+}
+
+.history {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+#previousGuesses {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    word-wrap: break-word;
+}
+
+.hidden {
+    display: none;
+}
+
+#restartButton {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--success-color);
+}
+#restartButton:hover {
+    background-color: #388e3c;
+}
+
+/* Colores de feedback */
+.feedback-correct { color: var(--success-color); }
+.feedback-wrong { color: var(--error-color); }
+.feedback-hint { color: var(--warning-color); }
