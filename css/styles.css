@@ -357,6 +357,47 @@ h3 {
   color: var(--muted);
 }
 
+.timeline .note {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── Certifications ──────────────────────────────────── */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cert {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+.cert:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+}
+
+.cert-org {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cert-date {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 /* ── Contact & footer ────────────────────────────────── */
 .contact {
   text-align: center;
@@ -405,6 +446,10 @@ h3 {
   .skills {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .certs {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -426,7 +471,8 @@ h3 {
   }
 
   .projects,
-  .skills {
+  .skills,
+  .certs {
     grid-template-columns: 1fr;
   }
 }

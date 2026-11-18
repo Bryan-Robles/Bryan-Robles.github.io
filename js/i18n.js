@@ -39,6 +39,16 @@
       "I'm looking for an internship or a first role as a backend or full-stack developer. Reach me on LinkedIn.",
     "footer.early": "Early exercises from the Web Programming course:",
     "footer.magic": "Magic number",
+    "nav.certs": "Certifications",
+    "cv.download": "Download CV",
+    "education.grad": "Expected graduation: second half of 2027",
+    "certs.title": "Certifications",
+    "certs.defense": "Network Defense",
+    "certs.endpoint": "Endpoint Security",
+    "certs.intro": "Introduction to Cybersecurity",
+    "certs.nov": "November 2026",
+    "certs.oct": "October 2026",
+    "certs.aug": "August 2026",
   };
 
   var nodes = document.querySelectorAll("[data-i18n]");
@@ -54,6 +64,9 @@
     nodes.forEach(function (n) {
       var text = dict[n.dataset.i18n];
       if (text) n.textContent = text;
+    });
+    document.querySelectorAll("[data-cv]").forEach(function (a) {
+      a.href = lang === "en" ? "cv/Bryan-Robles-CV-EN.pdf" : "cv/Bryan-Robles-CV-ES.pdf";
     });
     document.documentElement.lang = lang;
     toggle.textContent = lang === "en" ? "ES" : "EN";
