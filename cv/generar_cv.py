@@ -8,6 +8,8 @@ ACCENT = (37, 99, 235)
 TEXT = (15, 23, 42)
 MUTED = (71, 85, 105)
 
+EMAIL = "branromo08@gmail.com"
+
 LINKS = [
     ("linkedin.com/in/bryan-robles-ing", "https://www.linkedin.com/in/bryan-robles-ing/"),
     ("github.com/Bryan-Robles", "https://github.com/Bryan-Robles"),
@@ -144,14 +146,22 @@ def build(lang):
     pdf.set_font("UI", "B", 12)
     pdf.set_text_color(*ACCENT)
     pdf.cell(0, 6, c["title"], new_x="LMARGIN", new_y="NEXT", align="L")
+    # Contact line 1: location and email; line 2: profile links
     pdf.set_font("UI", "", 9)
     pdf.set_text_color(*MUTED)
-    pdf.cell(pdf.get_string_width(c["location"]) + 2, 6, c["location"])
+    pdf.cell(pdf.get_string_width(c["location"]) + 1, 5, c["location"])
+    pdf.cell(pdf.get_string_width("  ·  "), 5, "  ·  ")
+    pdf.set_text_color(*ACCENT)
+    pdf.cell(pdf.get_string_width(EMAIL), 5, EMAIL, link="mailto:" + EMAIL)
+    pdf.ln(5)
+    first = True
     for label, url in LINKS:
-        pdf.cell(pdf.get_string_width("  ·  "), 6, "  ·  ")
+        if not first:
+            pdf.set_text_color(*MUTED)
+            pdf.cell(pdf.get_string_width("  ·  "), 5, "  ·  ")
+        first = False
         pdf.set_text_color(*ACCENT)
-        pdf.cell(pdf.get_string_width(label), 6, label, link=url)
-        pdf.set_text_color(*MUTED)
+        pdf.cell(pdf.get_string_width(label), 5, label, link=url)
     pdf.ln(7)
 
     pdf.section(c["profile_h"])

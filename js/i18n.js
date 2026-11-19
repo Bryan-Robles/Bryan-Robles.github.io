@@ -35,8 +35,7 @@
     "education.uniWhen": "2023 – present",
     "education.uni": "Systems Engineering",
     "contact.title": "Let's talk",
-    "contact.text":
-      "I'm looking for an internship or a first role as a backend or full-stack developer. Reach me on LinkedIn.",
+    "contact.email": "Email",
     "footer.early": "Early exercises from the Web Programming course:",
     "footer.magic": "Magic number",
     "nav.certs": "Certifications",
@@ -58,6 +57,8 @@
   });
 
   var toggle = document.getElementById("lang-toggle");
+  var contactEl = document.getElementById("contact-text");
+  var contactEs = contactEl ? contactEl.innerHTML : "";
 
   function apply(lang) {
     var dict = lang === "en" ? en : es;
@@ -68,6 +69,13 @@
     document.querySelectorAll("[data-cv]").forEach(function (a) {
       a.href = lang === "en" ? "cv/Bryan-Robles-CV-EN.pdf" : "cv/Bryan-Robles-CV-ES.pdf";
     });
+    var contact = document.getElementById("contact-text");
+    if (contact) {
+      contact.innerHTML =
+        lang === "en"
+          ? "I’m looking for an internship or a first role as a backend or full-stack developer. Reach me on LinkedIn or at <a href=\"mailto:branromo08@gmail.com\">branromo08@gmail.com</a>."
+          : contactEs;
+    }
     document.documentElement.lang = lang;
     toggle.textContent = lang === "en" ? "ES" : "EN";
     toggle.setAttribute("aria-label", lang === "en" ? "Cambiar a español" : "Switch to English");
